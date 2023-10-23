@@ -3,9 +3,11 @@
   <img src="assets/icons/search.svg" alt="Buscar Pokemon">
 </form>
 
-<section class="container">
+<div class="container__loading">
   <mat-spinner color="accent" *ngIf="loading"></mat-spinner>
+</div>
 
+<section class="container">
   <section class="grid__weather">
     <div class="grid__weather__data">
       <div class="grid__weather__location">

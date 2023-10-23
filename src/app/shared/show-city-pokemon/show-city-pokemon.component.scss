@@ -1,6 +1,14 @@
 :host {
   width: 100%;
 
+  .container__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
   form {
     display: flex;
     justify-content: space-between;
