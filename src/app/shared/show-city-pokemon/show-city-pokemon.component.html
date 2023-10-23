@@ -1,0 +1,44 @@
+<form #form="ngForm" (submit)="getSearch()">
+  <input type="text" name="city" placeholder="Digite a cidade que deseja buscar..." [(ngModel)]="cityName">
+  <img src="assets/icons/search.svg" alt="Buscar Pokemon">
+</form>
+
+<section class="container">
+  <mat-spinner color="accent" *ngIf="loading"></mat-spinner>
+
+  <section class="grid__weather">
+    <div class="grid__weather__data">
+      <div class="grid__weather__location">
+        {{ weatherData?.name }}
+      </div>
+
+      <div class="grid__weather__temperature">
+        {{ weatherData?.main?.temp | number: '1.0-0' }} ºC
+      </div>
+    </div>
+  </section>
+
+  <section class="pokemon__grid">
+      <div class="pokemon__grid__status">
+        <h2>
+          {{ getAllPokemons?.name }}
+        </h2>
+
+        <ul>
+          <li>
+            {{ getAllPokemons?.status?.types[0]?.type.name }}
+          </li>
+          <li>
+            {{ getAllPokemons?.status?.types[1]?.type.name }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="pokemon__grid__image">
+        <img
+          [src]="getAllPokemons?.status?.sprites?.other?.dream_world?.front_default"
+          [alt]="getAllPokemons?.name"
+        >
+      </div>
+  </section>
+</section>
