@@ -21,7 +21,6 @@ export class ShowCityPokemonComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.loading = true;
     this.getWeatherData(this.cityName);
     this.cityName = '';
 
@@ -40,7 +39,7 @@ export class ShowCityPokemonComponent implements OnInit {
         this.getAllPokemons = this.setAllPokemons.find((e: any) => {
           return e.name;
         });
-        this.loading = true;
+        this.loading = false;
       }
     );
   }
